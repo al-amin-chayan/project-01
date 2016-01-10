@@ -1,12 +1,12 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CityEntry.aspx.cs" Inherits="CountryCityManagementApp.CityEntry" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CityEntry.aspx.cs" Inherits="CountryCityManagementApp.CityEntry" ValidateRequest="false" %>
 
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <meta charset="utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="description" content=""/>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
 
     <title>City Entry</title>
 
@@ -15,15 +15,15 @@
     <link href="css/main.css" rel="stylesheet" />
 
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="css/froala_editor.css"/>
-    <link rel="stylesheet" href="css/froala_style.css"/>
-    <link rel="stylesheet" href="css/plugins/code_view.css"/>
-    <link rel="stylesheet" href="css/plugins/image_manager.css"/>
-    <link rel="stylesheet" href="css/plugins/image.css"/>
-    <link rel="stylesheet" href="css/plugins/table.css"/>
-    <link rel="stylesheet" href="css/plugins/video.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/codemirror.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/froala_editor.css" />
+    <link rel="stylesheet" href="css/froala_style.css" />
+    <link rel="stylesheet" href="css/plugins/code_view.css" />
+    <link rel="stylesheet" href="css/plugins/image_manager.css" />
+    <link rel="stylesheet" href="css/plugins/image.css" />
+    <link rel="stylesheet" href="css/plugins/table.css" />
+    <link rel="stylesheet" href="css/plugins/video.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/codemirror.min.css" />
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -55,24 +55,27 @@
                         </div>
                         <div class="panel-body">
                             <asp:Label ID="messageLabel" runat="server" Text=""></asp:Label>
-                            <div class="form-group">
-                                <label for="cityNameTextBox" class="col-sm-2 control-label">Name</label>
-                                
-                                <div class="col-sm-10">
-                                    <asp:TextBox ID="cityNameTextBox" runat="server" CssClass="form-control"></asp:TextBox>
+                            <div class="clearfix"></div>
+                            <div class="row">
+                                <div class="form-group">
+                                    <label for="cityNameTextBox" class="col-sm-2 control-label">Name</label>
+                                    <div class="col-sm-10">
+                                        <asp:TextBox ID="cityNameTextBox" runat="server" CssClass="form-control"></asp:TextBox>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="aboutTextBox" class="col-sm-2 control-label">About</label>
+                                    <div class="col-sm-10">
+                                        <asp:TextBox ID="aboutTextBox" runat="server" Style="margin-top: 30px;" CssClass="form-control" Rows="10" TextMode="MultiLine"></asp:TextBox>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-10">
+                                        <asp:Button ID="saveButton" runat="server" Text="Save" CssClass="btn btn-default" OnClick="saveButton1_Click" />
+                                    </div>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="aboutTextBox" class="col-sm-2 control-label">About</label>
-                                <div class="col-sm-10">
-                                    <asp:TextBox ID="aboutTextBox" runat="server" style="margin-top: 30px;" CssClass="form-control" Rows="10" TextMode="MultiLine"></asp:TextBox>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-sm-offset-2 col-sm-10">
-                                    <asp:Button ID="saveButton" runat="server" Text="Save" CssClass="btn btn-default" OnClick="saveButton1_Click" />
-                                </div>
-                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -106,14 +109,9 @@
 
     <script>
         $(function () {
-            $('#aboutTextBox')
-                .on('froalaEditor.initialized', function(e, editor) {
-                    $('#aboutTextBox').parents('form').on('submit', function() {
-                        console.log($('#aboutTextBox').val());
-                        return false;
-                    });
-                })
-                .froalaEditor({ enter: $.FroalaEditor.ENTER_P, placeholderText: null });
+            $('#aboutTextBox').froalaEditor({
+                toolbarButtons: ['fullscreen', 'bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', 'fontFamily', 'fontSize', '|', 'color', 'emoticons', 'inlineStyle', 'paragraphStyle', '|', 'paragraphFormat', 'align', 'formatOL', 'formatUL', 'outdent', 'indent', '-', 'insertLink', 'insertImage', 'insertVideo', 'insertFile', 'insertTable', '|', 'quote', 'insertHR', 'undo', 'redo', 'clearFormatting', 'selectAll', 'html']
+            });
         });
     </script>
 </body>

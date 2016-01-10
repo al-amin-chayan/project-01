@@ -10,3 +10,9 @@ E:\Chayan\CSharp_Practice\Project-01\CountryCityManagementApp\CountryCityManagem
 E:\Chayan\CSharp_Practice\Project-01\CountryCityManagementApp\CountryCityManagementApp\obj\Debug\CountryCityManagementApp.csprojResolveAssemblyReference.cache
 E:\Chayan\CSharp_Practice\Project-01\CountryCityManagementApp\CountryCityManagementApp\obj\Debug\CountryCityManagementApp.dll
 E:\Chayan\CSharp_Practice\Project-01\CountryCityManagementApp\CountryCityManagementApp\obj\Debug\CountryCityManagementApp.pdb
+E:\C#\project-01\CountryCityManagementApp\CountryCityManagementApp\bin\CountryCityManagementApp.dll.config
+E:\C#\project-01\CountryCityManagementApp\CountryCityManagementApp\bin\CountryCityManagementApp.dll
+E:\C#\project-01\CountryCityManagementApp\CountryCityManagementApp\bin\CountryCityManagementApp.pdb
+E:\C#\project-01\CountryCityManagementApp\CountryCityManagementApp\obj\Debug\CountryCityManagementApp.csprojResolveAssemblyReference.cache
+E:\C#\project-01\CountryCityManagementApp\CountryCityManagementApp\obj\Debug\CountryCityManagementApp.dll
+E:\C#\project-01\CountryCityManagementApp\CountryCityManagementApp\obj\Debug\CountryCityManagementApp.pdb

@@ -75,6 +75,7 @@
     <Content Include="css\froala_editor.min.css" />
     <Content Include="css\froala_style.css" />
     <Content Include="css\froala_style.min.css" />
+    <Content Include="css\jquery.dataTables.min.css" />
     <Content Include="css\main.css" />
     <Content Include="css\plugins\char_counter.css" />
     <Content Include="css\plugins\char_counter.min.css" />
@@ -112,6 +113,7 @@
     <Content Include="Inc\nav.html" />
     <Content Include="Index.aspx" />
     <Content Include="js\froala_editor.min.js" />
+    <Content Include="js\jquery.dataTables.min.js" />
     <Content Include="js\languages\ar.js" />
     <Content Include="js\languages\bs.js" />
     <Content Include="js\languages\cs.js" />
