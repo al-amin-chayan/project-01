@@ -12,27 +12,69 @@ namespace CountryCityManagementApp
     public partial class CityEntry : System.Web.UI.Page
     {
         CityManager aCityManager = new CityManager();
+        CountryManager aCountryManager = new CountryManager();
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                LoadCityList();
+                LoadCountries();
+            }
+        }
 
+        private void LoadCityList()
+        {
+            List<CityListModel> cities = new List<CityListModel>();
+            cities = aCityManager.GetCityList();
+            cityGridView.DataSource = cities;
+            cityGridView.DataBind();
+            cityGridView.UseAccessibleHeader = true;
+            cityGridView.HeaderRow.TableSection = TableRowSection.TableHeader;
+        }
+
+        private void LoadCountries()
+        {
+            var firstitem = countryDropDownList.Items[0];
+            countryDropDownList.Items.Clear();
+            countryDropDownList.Items.Add(firstitem);
+
+            List<Country> countries = aCountryManager.GetCountryList();
+            countryDropDownList.DataSource = countries;
+            countryDropDownList.DataValueField = "Id";
+            countryDropDownList.DataTextField = "Name";
+            countryDropDownList.DataBind();
         }
 
         protected void saveButton_Click(object sender, EventArgs e)
         {
-            string name = cityNameTextBox.Text;
-            string about = aboutTextBox.Text;
-
             Message message = new Message();
 
-            City aCity = new City(name, about, 10, "", "", 1);
-            message = aCityManager.Save(aCity);
-
-            messageLabel.CssClass = message.Status;
-            messageLabel.Text = message.Details;
-
-            if (message.Status == "alert alert-success")
+            try
             {
-                ClearFormData();
+                string name = cityNameTextBox.Text.Trim();
+                string about = aboutTextBox.Text.Trim();
+                int dwellers = Convert.ToInt32(dwellersTextBox.Text);
+                string location = locationTextBox.Text.Trim();
+                string weather = weatherTextBox.Text.Trim();
+                int countryId = Convert.ToInt32(countryDropDownList.SelectedItem.Value);
+                City aCity = new City(name, about, dwellers, location, weather, countryId);
+                message = aCityManager.Save(aCity);
+            }
+            catch (Exception ex)
+            {
+                message.Status = "alert alert-danger";
+                message.Details = ex.Message;
+            }
+            finally
+            {
+                messageLabel.CssClass = message.Status;
+                messageLabel.Text = message.Details;
+
+                if (message.Status == "alert alert-success")
+                {
+                    ClearFormData();
+                }
+                LoadCityList();
             }
         }
 
@@ -40,25 +82,15 @@ namespace CountryCityManagementApp
         {
             cityNameTextBox.Text = "";
             aboutTextBox.Text = "";
+            dwellersTextBox.Text = "";
+            locationTextBox.Text = "";
+            weatherTextBox.Text = "";
+            countryDropDownList.SelectedIndex = 0;
         }
 
-        protected void saveButton1_Click(object sender, EventArgs e)
+        protected void cancelButton_Click(object sender, EventArgs e)
         {
-            string name = cityNameTextBox.Text;
-            string about = aboutTextBox.Text;
-
-            Message message = new Message();
-
-            City aCity = new City(name, about, 10, "", "", 1);
-            message = aCityManager.Save(aCity);
-
-            messageLabel.CssClass = message.Status;
-            messageLabel.Text = message.Details;
-
-            if (message.Status == "alert alert-success")
-            {
-                ClearFormData();
-            }
+            Response.Redirect("Index.aspx");
         }
     }
 }

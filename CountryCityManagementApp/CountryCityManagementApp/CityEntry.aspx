@@ -13,7 +13,7 @@
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/main.css" rel="stylesheet" />
-
+    <link href="//cdn.datatables.net/1.10.10/css/jquery.dataTables.min.css" rel="stylesheet" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="css/froala_editor.css" />
@@ -29,6 +29,11 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <style type="text/css">
+        #messageLabel {
+            display: block;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -59,23 +64,79 @@
                             <div class="row">
                                 <div class="form-group">
                                     <label for="cityNameTextBox" class="col-sm-2 control-label">Name</label>
-                                    <div class="col-sm-10">
+                                    <div class="col-sm-12 col-md-4">
                                         <asp:TextBox ID="cityNameTextBox" runat="server" CssClass="form-control"></asp:TextBox>
                                     </div>
                                 </div>
+                                <div class="clearfix"></div>
                                 <div class="form-group">
                                     <label for="aboutTextBox" class="col-sm-2 control-label">About</label>
-                                    <div class="col-sm-10">
+                                    <div class="col-sm-9">
                                         <asp:TextBox ID="aboutTextBox" runat="server" Style="margin-top: 30px;" CssClass="form-control" Rows="10" TextMode="MultiLine"></asp:TextBox>
                                     </div>
                                 </div>
+                                <div class="clearfix"></div>
+                                <div class="form-group">
+                                    <label for="dwellersTextBox" class="col-sm-2 control-label">No. of Dwellers</label>
+                                    <div class="col-sm-12 col-md-4">
+                                        <asp:TextBox ID="dwellersTextBox" runat="server" CssClass="form-control" TextMode="Number"></asp:TextBox>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="form-group">
+                                    <label for="locationTextBox" class="col-sm-2 control-label">Location</label>
+                                    <div class="col-sm-12 col-md-4">
+                                        <asp:TextBox ID="locationTextBox" runat="server" CssClass="form-control"></asp:TextBox>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="form-group">
+                                    <label for="weatherTextBox" class="col-sm-2 control-label">Weather</label>
+                                    <div class="col-sm-12 col-md-4">
+                                        <asp:TextBox ID="weatherTextBox" runat="server" CssClass="form-control"></asp:TextBox>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="form-group">
+                                    <label for="countryDropDownList" class="col-sm-2 control-label">Country</label>
+                                    <div class="col-sm-12 col-md-4">
+                                        <asp:DropDownList ID="countryDropDownList" runat="server" CssClass="form-control" AppendDataBoundItems="True">
+                                            <asp:ListItem Text="<Select Country>" Value="0" />
+                                        </asp:DropDownList>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
                                 <div class="form-group">
                                     <div class="col-sm-offset-2 col-sm-10">
-                                        <asp:Button ID="saveButton" runat="server" Text="Save" CssClass="btn btn-default" OnClick="saveButton1_Click" />
+                                        <asp:Button ID="saveButton" runat="server" Text="Save" CssClass="btn btn-default" OnClick="saveButton_Click" />
+                                        <asp:Button ID="cancelButton" runat="server" Text="Cancel" CssClass="btn btn-default" OnClick="cancelButton_Click" />
                                     </div>
                                 </div>
                             </div>
 
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" style="margin-top: 20px;">
+                <div class="col-xs-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">City List</h3>
+                        </div>
+                        <div class="panel-body">
+                            <asp:GridView ID="cityGridView" runat="server"
+                                CssClass="table table-hover table-striped" GridLines="None"
+                                AutoGenerateColumns="False" PageSize="3">
+                                <Columns>
+                                    <asp:BoundField DataField="Sl" HeaderText="Sl#" />
+                                    <asp:BoundField DataField="Name" HeaderText="Name" />
+                                    <asp:BoundField DataField="NoOfDwellers" HeaderText="No. Of Dwellers" />
+                                    <asp:BoundField DataField="Country" HeaderText="Country" />
+                                </Columns>
+                                <RowStyle CssClass="cursor-pointer" />
+                            </asp:GridView>
                         </div>
                     </div>
                 </div>
@@ -106,12 +167,14 @@
     <script type="text/javascript" src="js/plugins/video.min.js"></script>
     <script type="text/javascript" src="js/plugins/url.min.js"></script>
     <script type="text/javascript" src="js/plugins/entities.min.js"></script>
-
+    
+    <script src="js/jquery.dataTables.min.js"></script>
     <script>
         $(function () {
             $('#aboutTextBox').froalaEditor({
                 toolbarButtons: ['fullscreen', 'bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', 'fontFamily', 'fontSize', '|', 'color', 'emoticons', 'inlineStyle', 'paragraphStyle', '|', 'paragraphFormat', 'align', 'formatOL', 'formatUL', 'outdent', 'indent', '-', 'insertLink', 'insertImage', 'insertVideo', 'insertFile', 'insertTable', '|', 'quote', 'insertHR', 'undo', 'redo', 'clearFormatting', 'selectAll', 'html']
             });
+            $('#cityGridView').DataTable();
         });
     </script>
 </body>

@@ -14,8 +14,7 @@ namespace CountryCityManagementApp.BusinessLogic
         public Message Save(City newCity)
         {
             Message message = new Message();
-            string name = newCity.Name.Trim();
-            if (name.Length == 0)
+            if (newCity.Name.Length == 0)
             {
                 message.Status = "alert alert-warning";
                 message.Details = "City name is required.";
@@ -26,7 +25,35 @@ namespace CountryCityManagementApp.BusinessLogic
             if (isCityExists)
             {
                 message.Status = "alert alert-danger";
-                message.Details = "City name [" + name + "] is already exists.";
+                message.Details = "City name [" + newCity.Name + "] is already exists.";
+                return message;
+            }
+
+            if (newCity.About.Length == 0)
+            {
+                message.Status = "alert alert-warning";
+                message.Details = "About field name is required.";
+                return message;
+            }
+
+            if (newCity.Location.Length == 0)
+            {
+                message.Status = "alert alert-warning";
+                message.Details = "Location field name is required.";
+                return message;
+            }
+
+            if (newCity.Weather.Length == 0)
+            {
+                message.Status = "alert alert-warning";
+                message.Details = "Weather field name is required.";
+                return message;
+            }
+
+            if (newCity.CountryId == 0)
+            {
+                message.Status = "alert alert-warning";
+                message.Details = "Select a Country of the city.";
                 return message;
             }
 
@@ -34,7 +61,7 @@ namespace CountryCityManagementApp.BusinessLogic
             {
                 aCityGateway.AddCity(newCity);
                 message.Status = "alert alert-success";
-                message.Details = "Book Added Successfully";
+                message.Details = "City Added Successfully";
             }
             catch (SqlException ex)
             {
@@ -47,8 +74,17 @@ namespace CountryCityManagementApp.BusinessLogic
 
         private bool IsCityExists(City newCity)
         {
+            City aCity = aCityGateway.GetCityByName(newCity.Name);
+            if (aCity != null)
+            {
+                return true;
+            }
             return false;
+        }
+
+        public List<CityListModel> GetCityList()
+        {
+            return aCityGateway.GetCityList();
         }
     }
 }
-

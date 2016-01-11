@@ -12,7 +12,7 @@ namespace CountryCityManagementApp.BusinessLogic
         CountryViewGateway aCountryViewGateway = new CountryViewGateway();
         public List<CountryViewModel> GetCountryViewByNmae(string name = "")
         {
-            return aCountryViewGateway.GetCourseViewByNmae(name);
+            return aCountryViewGateway.GetCountryViewByNmae(name);
         }
     }
 }

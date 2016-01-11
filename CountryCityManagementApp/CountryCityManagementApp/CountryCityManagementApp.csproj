@@ -75,7 +75,6 @@
     <Content Include="css\froala_editor.min.css" />
     <Content Include="css\froala_style.css" />
     <Content Include="css\froala_style.min.css" />
-    <Content Include="css\jquery.dataTables.min.css" />
     <Content Include="css\main.css" />
     <Content Include="css\plugins\char_counter.css" />
     <Content Include="css\plugins\char_counter.min.css" />
@@ -191,6 +190,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessLogic\CityManager.cs" />
+    <Compile Include="BusinessLogic\CountryManager.cs" />
     <Compile Include="BusinessLogic\CountryViewManager.cs" />
     <Compile Include="CityEntry.aspx.cs">
       <DependentUpon>CityEntry.aspx</DependentUpon>
@@ -206,7 +206,10 @@
     <Compile Include="CountryView.aspx.designer.cs">
       <DependentUpon>CountryView.aspx</DependentUpon>
     </Compile>
-    <Compile Include="DBGateway\CityGateway.cs" />
+    <Compile Include="DBGateway\CityGateway.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DBGateway\CountryGateway.cs" />
     <Compile Include="DBGateway\CountryViewGateway.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -219,6 +222,8 @@
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\City.cs" />
+    <Compile Include="Models\CityListModel.cs" />
+    <Compile Include="Models\Country.cs" />
     <Compile Include="Models\CountryViewModel.cs" />
     <Compile Include="Models\Message.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

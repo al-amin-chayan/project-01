@@ -49,6 +49,42 @@ namespace CountryCityManagementApp {
         protected global::System.Web.UI.WebControls.TextBox aboutTextBox;
         
         /// <summary>
+        /// dwellersTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox dwellersTextBox;
+        
+        /// <summary>
+        /// locationTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox locationTextBox;
+        
+        /// <summary>
+        /// weatherTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox weatherTextBox;
+        
+        /// <summary>
+        /// countryDropDownList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList countryDropDownList;
+        
+        /// <summary>
         /// saveButton control.
         /// </summary>
         /// <remarks>
@@ -56,5 +92,23 @@ namespace CountryCityManagementApp {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button saveButton;
+        
+        /// <summary>
+        /// cancelButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button cancelButton;
+        
+        /// <summary>
+        /// cityGridView control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView cityGridView;
     }
 }

@@ -26,7 +26,7 @@
         <!-- #include file ="Inc/nav.html" --> 
         <!-- Jumbotron -->
         <div class="jumbotron">
-            <h1>Team Megatron</h1>
+            <h1>Project 01</h1>
             <p class="lead">This web application is for storing and retrieving information of several countries and their cities. Noted that, you are not authorized person for changing any specification.</p>
             <%--<p><a class="btn btn-lg btn-success" href="#" role="button">Get started today</a></p>--%>
         </div>

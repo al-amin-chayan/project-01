@@ -10,7 +10,7 @@ namespace CountryCityManagementApp.DBGateway
     {
         public string connectionString = WebConfigurationManager.ConnectionStrings["cityManagementconnectionString"].ConnectionString;
 
-        public List<CountryViewModel> GetCourseViewByNmae(string name)
+        public List<CountryViewModel> GetCountryViewByNmae(string name)
         {
             string sql = "SELECT a.Name, a.About, COUNT(b.Id) AS TotalCities, ISNULL(SUM(b.NoOfDwellers),0) AS TotalCityDwellers " +
                          "FROM Countries a " + 
