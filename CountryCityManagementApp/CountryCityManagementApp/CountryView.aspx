@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CountryView.aspx.cs" Inherits="CountryCityManagementApp.CountryView" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CountryView.aspx.cs" Inherits="CountryCityManagementApp.CountryView" ValidateRequest="false" %>
 
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
@@ -27,11 +27,11 @@
         <!-- The justified navigation menu is meant for single line per list item.
            Multiple lines will require custom code not provided by Bootstrap. -->
         <div class="masthead">
-            <h3 class="text-muted">Country City Information Management System</h3>
+            <h3 class="text-muted">CountryDropDown City Information Management System</h3>
             <nav>
                 <ul class="nav nav-justified">
                     <li><a href="Index.aspx">Home</a></li>
-                    <li><a href="Index.aspx">Country Entry</a></li>
+                    <li><a href="Index.aspx">CountryDropDown Entry</a></li>
                     <li><a href="CityEntry.aspx">City Entry</a></li>
                     <li><a href="Index.aspx">View Cities</a></li>
                     <li class="active"><a href="CountryView.aspx">View Countries</a></li>
@@ -65,7 +65,7 @@
 
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Country List</h3>
+                        <h3 class="panel-title">CountryDropDown List</h3>
                     </div>
                     <div class="panel-body">
                         <asp:GridView ID="countryGridView" runat="server"

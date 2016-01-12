@@ -74,7 +74,7 @@ namespace CountryCityManagementApp.DBGateway
 
         public List<CityListModel> GetCityList()
         {
-            string sql = "SELECT a.Name, a.NoOfDwellers, b.Name AS Country FROM Cities a LEFT JOIN Countries b ON a.CountryID = b.Id ORDER BY a.Name ASC";
+            string sql = "SELECT a.Name, a.NoOfDwellers, b.Name AS CountryDropDown FROM Cities a LEFT JOIN Countries b ON a.CountryID = b.Id ORDER BY a.Name ASC";
 
             List<CityListModel> cityList = new List<CityListModel>();
             SqlConnection connection = new SqlConnection(connectionString);
@@ -90,7 +90,7 @@ namespace CountryCityManagementApp.DBGateway
                 aCityList.Sl = sl++;
                 aCityList.Name = reader["Name"].ToString();
                 aCityList.NoOfDwellers = Convert.ToInt32(reader["NoOfDwellers"].ToString());
-                aCityList.Country = reader["Country"].ToString();
+                aCityList.Country = reader["CountryDropDown"].ToString();
                 cityList.Add(aCityList);
             }
             connection.Close();

@@ -38,7 +38,7 @@ namespace CountryCityManagementApp
             countryDropDownList.Items.Clear();
             countryDropDownList.Items.Add(firstitem);
 
-            List<Country> countries = aCountryManager.GetCountryList();
+            List<CountryDropDown> countries = aCountryManager.GetCountryList();
             countryDropDownList.DataSource = countries;
             countryDropDownList.DataValueField = "Id";
             countryDropDownList.DataTextField = "Name";

@@ -40,11 +40,11 @@
         <!-- The justified navigation menu is meant for single line per list item.
            Multiple lines will require custom code not provided by Bootstrap. -->
         <div class="masthead">
-            <h3 class="text-muted">Country City Information Management System</h3>
+            <h3 class="text-muted">CountryDropDown City Information Management System</h3>
             <nav>
                 <ul class="nav nav-justified">
                     <li><a href="Index.aspx">Home</a></li>
-                    <li><a href="Index.aspx">Country Entry</a></li>
+                    <li><a href="CountryEntry.aspx">Country Entry</a></li>
                     <li class="active"><a href="CityEntry.aspx">City Entry</a></li>
                     <li><a href="Index.aspx">View Cities</a></li>
                     <li><a href="CountryView.aspx">View Countries</a></li>
@@ -167,14 +167,64 @@
     <script type="text/javascript" src="js/plugins/video.min.js"></script>
     <script type="text/javascript" src="js/plugins/url.min.js"></script>
     <script type="text/javascript" src="js/plugins/entities.min.js"></script>
-    
+    <script src="js/jquery.validate.min.js"></script>
     <script src="js/jquery.dataTables.min.js"></script>
     <script>
+        $.validator.setDefaults({
+            submitHandler: function () {
+                alert("submitted!");
+            }
+        });
+
         $(function () {
             $('#aboutTextBox').froalaEditor({
                 toolbarButtons: ['fullscreen', 'bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', 'fontFamily', 'fontSize', '|', 'color', 'emoticons', 'inlineStyle', 'paragraphStyle', '|', 'paragraphFormat', 'align', 'formatOL', 'formatUL', 'outdent', 'indent', '-', 'insertLink', 'insertImage', 'insertVideo', 'insertFile', 'insertTable', '|', 'quote', 'insertHR', 'undo', 'redo', 'clearFormatting', 'selectAll', 'html']
             });
             $('#cityGridView').DataTable();
+
+            // validate the comment form when it is submitted
+            //$("#CityEntryForm").validate();
+
+            // validate signup form on keyup and submit
+            $("#CityEntryForm").validate({
+                rules: {
+                    cityNameTextBox: "required",
+                    aboutTextBox: "required",
+                    dwellersTextBox: {
+                        required: true,
+                        min: 1
+                    }
+                },
+                messages: {
+                    cityNameTextBox: "Please enter city name",
+                    aboutTextBox: "Please enter city information.",
+                    dwellersTextBox: {
+                        required: "Please enter number of dwellers",
+                        min: "Minimum value is 1"
+                    }
+                }
+            });
+
+            // propose username by combining first- and lastname
+            $("#username").focus(function () {
+                var firstname = $("#firstname").val();
+                var lastname = $("#lastname").val();
+                if (firstname && lastname && !this.value) {
+                    this.value = firstname + "." + lastname;
+                }
+            });
+
+            //code to hide topic selection, disable for demo
+            var newsletter = $("#newsletter");
+            // newsletter topics are optional, hide at first
+            var inital = newsletter.is(":checked");
+            var topics = $("#newsletter_topics")[inital ? "removeClass" : "addClass"]("gray");
+            var topicInputs = topics.find("input").attr("disabled", !inital);
+            // show when newsletter is checked
+            newsletter.click(function () {
+                topics[this.checked ? "removeClass" : "addClass"]("gray");
+                topicInputs.attr("disabled", !this.checked);
+            });
         });
     </script>
 </body>

@@ -13,9 +13,9 @@ namespace CountryCityManagementApp.DBGateway
     {
         public string connectionString = WebConfigurationManager.ConnectionStrings["cityManagementconnectionString"].ConnectionString;
 
-        public List<Country> CountryList()
+        public List<CountryDropDown> CountryList()
         {
-            List<Country> countries = new List<Country>();
+            List<CountryDropDown> countries = new List<CountryDropDown>();
 
             SqlConnection connection = new SqlConnection(connectionString);
             string query = "SELECT * FROM Countries ORDER BY Name ASC";
@@ -25,11 +25,11 @@ namespace CountryCityManagementApp.DBGateway
 
             while (reader.Read())
             {
-                Country aCountry = new Country();
-                aCountry.Id = Convert.ToInt32(reader["Id"].ToString());
-                aCountry.Name = reader["Name"].ToString();
-                aCountry.About = reader["About"].ToString();
-                countries.Add(aCountry);
+                CountryDropDown aCountryDropDown = new CountryDropDown();
+                aCountryDropDown.Id = Convert.ToInt32(reader["Id"].ToString());
+                aCountryDropDown.Name = reader["Name"].ToString();
+                aCountryDropDown.About = reader["About"].ToString();
+                countries.Add(aCountryDropDown);
             }
             reader.Close();
             connection.Close();

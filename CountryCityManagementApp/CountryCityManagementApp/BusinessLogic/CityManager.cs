@@ -53,7 +53,7 @@ namespace CountryCityManagementApp.BusinessLogic
             if (newCity.CountryId == 0)
             {
                 message.Status = "alert alert-warning";
-                message.Details = "Select a Country of the city.";
+                message.Details = "Select a CountryDropDown of the city.";
                 return message;
             }
 

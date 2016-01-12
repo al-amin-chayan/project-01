@@ -66,6 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CityEntry.aspx" />
+    <Content Include="CountryEntry.aspx" />
     <Content Include="CountryView.aspx" />
     <Content Include="css\bootstrap-theme.css" />
     <Content Include="css\bootstrap-theme.min.css" />
@@ -106,8 +107,12 @@
     <Content Include="css\themes\red.min.css" />
     <Content Include="css\themes\royal.css" />
     <Content Include="css\themes\royal.min.css" />
+    <Content Include="css\ViewCities.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="img\alamin_ahmed.jpg" />
+    <Content Include="img\chayan.jpg" />
+    <Content Include="img\nasrat_sharif.jpg" />
     <Content Include="Inc\footer.html" />
     <Content Include="Inc\nav.html" />
     <Content Include="Index.aspx" />
@@ -180,6 +185,11 @@
     <Content Include="css\bootstrap-theme.css.map" />
     <Content Include="css\bootstrap.min.css.map" />
     <Content Include="css\bootstrap.css.map" />
+    <None Include="js\jquery.validate-vsdoc.js" />
+    <Content Include="js\jquery.validate.js" />
+    <Content Include="js\jquery.validate.min.js" />
+    <Content Include="ViewCities.aspx" />
+    <Content Include="WebForm1.aspx" />
     <None Include="js\jquery-2.1.4.intellisense.js" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
@@ -192,12 +202,21 @@
     <Compile Include="BusinessLogic\CityManager.cs" />
     <Compile Include="BusinessLogic\CountryManager.cs" />
     <Compile Include="BusinessLogic\CountryViewManager.cs" />
+    <Compile Include="BusinessLogic\Manager.cs" />
+    <Compile Include="BusinessLogic\ViewCitiesManager.cs" />
     <Compile Include="CityEntry.aspx.cs">
       <DependentUpon>CityEntry.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="CityEntry.aspx.designer.cs">
       <DependentUpon>CityEntry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CountryEntry.aspx.cs">
+      <DependentUpon>CountryEntry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CountryEntry.aspx.designer.cs">
+      <DependentUpon>CountryEntry.aspx</DependentUpon>
     </Compile>
     <Compile Include="CountryView.aspx.cs">
       <DependentUpon>CountryView.aspx</DependentUpon>
@@ -211,6 +230,8 @@
     </Compile>
     <Compile Include="DBGateway\CountryGateway.cs" />
     <Compile Include="DBGateway\CountryViewGateway.cs" />
+    <Compile Include="DBGateway\DatabaseGateway.cs" />
+    <Compile Include="DBGateway\ViewCitiesGateway.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -221,12 +242,29 @@
     <Compile Include="Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Models\CitiesViewModel.cs" />
     <Compile Include="Models\City.cs" />
     <Compile Include="Models\CityListModel.cs" />
     <Compile Include="Models\Country.cs" />
+    <Compile Include="Models\CountryDropDown.cs" />
     <Compile Include="Models\CountryViewModel.cs" />
+    <Compile Include="Models\InputChecker.cs" />
     <Compile Include="Models\Message.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewCities.aspx.cs">
+      <DependentUpon>ViewCities.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewCities.aspx.designer.cs">
+      <DependentUpon>ViewCities.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

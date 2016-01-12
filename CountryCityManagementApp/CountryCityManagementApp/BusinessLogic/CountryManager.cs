@@ -10,7 +10,7 @@ namespace CountryCityManagementApp.BusinessLogic
     public class CountryManager
     {
         CountryGateway aCountryGateway = new CountryGateway();
-        public List<Country> GetCountryList()
+        public List<CountryDropDown> GetCountryList()
         {
             return aCountryGateway.CountryList();
         }

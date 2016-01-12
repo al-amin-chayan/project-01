@@ -86,3 +86,9 @@
     padding-left: 0;
   }
 }
+img.profile-pic {
+    clear: both;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
