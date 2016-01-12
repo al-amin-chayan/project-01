@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CountryView.aspx.cs" Inherits="CountryCityManagementApp.CountryView" ValidateRequest="false" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CountryView.aspx.cs" Inherits="CountryCityManagementApp.CountryView" %>
 
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
@@ -12,8 +12,8 @@
     <title>View Countries</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/main.css" rel="stylesheet" />
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../css/main.css" rel="stylesheet" />
     <link href="//cdn.datatables.net/1.10.10/css/jquery.dataTables.min.css" rel="stylesheet" />
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -27,13 +27,13 @@
         <!-- The justified navigation menu is meant for single line per list item.
            Multiple lines will require custom code not provided by Bootstrap. -->
         <div class="masthead">
-            <h3 class="text-muted">CountryDropDown City Information Management System</h3>
+            <h3 class="text-muted">Country City Information Management System</h3>
             <nav>
                 <ul class="nav nav-justified">
                     <li><a href="Index.aspx">Home</a></li>
-                    <li><a href="Index.aspx">CountryDropDown Entry</a></li>
+                    <li><a href="CountryEntry.aspx">Country Entry</a></li>
                     <li><a href="CityEntry.aspx">City Entry</a></li>
-                    <li><a href="Index.aspx">View Cities</a></li>
+                    <li><a href="ViewCities.aspx">View Cities</a></li>
                     <li class="active"><a href="CountryView.aspx">View Countries</a></li>
                 </ul>
             </nav>
@@ -74,7 +74,7 @@
                             <Columns>
                                 <asp:BoundField DataField="Sl" HeaderText="Sl#" />
                                 <asp:BoundField DataField="Name" HeaderText="Name" />
-                                <asp:BoundField DataField="About" HeaderText="About" />
+                                <asp:BoundField DataField="About" HtmlEncode="False" HeaderText="About" />
                                 <asp:BoundField DataField="TotalCities" HeaderText="No. of Cities" />
                                 <asp:BoundField DataField="TotalCityDwellers" HeaderText="No. of City Dwellers" />
                             </Columns>
@@ -86,13 +86,13 @@
             </div>
         </form>
         <!-- Site footer -->
-        <!-- #include file ="Inc/footer.html" -->
+        <!-- #include file ="../Inc/footer.html" -->
 
     </div>
     <!-- /container -->
-    <script src="js/jquery-2.1.4.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.dataTables.min.js"></script>
+    <script src="../js/jquery-2.1.4.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.dataTables.min.js"></script>
     <script>
         $(function () {
             $('#countryGridView').DataTable();

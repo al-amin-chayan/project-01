@@ -14,48 +14,9 @@ namespace CountryCityManagementApp.DBGateway
         private string connectionString =
             WebConfigurationManager.ConnectionStrings["cityManagementconnectionString"].ConnectionString;
 
-        public int Save(Country country) {
-            //string query = "INSERT INTO Countries VALUES ('" + country.CountryName + "','" + country.CountryAbout + "')";
+        
 
-            //SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
-
-            SqlConnection sqlConnection = new SqlConnection(connectionString);
-            string query = "INSERT INTO Countries  VALUES(@countryName, @countryAbout)";
-
-            SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
-
-            sqlCommand.Parameters.Clear();
-            sqlCommand.Parameters.Add("countryName", SqlDbType.NVarChar);
-            sqlCommand.Parameters["countryName"].Value = country.CountryName;
-            sqlCommand.Parameters.Add("countryAbout", SqlDbType.NVarChar);
-            sqlCommand.Parameters["countryAbout"].Value = country.CountryAbout;
-
-
-            sqlConnection.Open();
-            int rowAffected = sqlCommand.ExecuteNonQuery();
-            sqlConnection.Close();
-            return rowAffected;
-        }
-
-        public bool SearchCountryByName(string name) {
-            string query = "SELECT * FROM Countries WHERE Name = @countryName";
-            SqlConnection sqlConnection = new SqlConnection(connectionString);
-            SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
-            sqlConnection.Open();
-
-
-            sqlCommand.Parameters.Clear();
-            sqlCommand.Parameters.Add("countryName", SqlDbType.NVarChar);
-            sqlCommand.Parameters["countryName"].Value = name;
-
-            SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
-            if (sqlDataReader.Read()) {
-                sqlConnection.Close();
-                return true;
-            }
-            sqlConnection.Close();
-            return false;
-        }
+        
         public bool SearchCityByName(string name)
         {
             string query = "SELECT * FROM Cities WHERE Name = @cityName";
@@ -78,31 +39,7 @@ namespace CountryCityManagementApp.DBGateway
             return false;
         }
 
-        public List<Country> LoadAllCountries()
-        {
-            List<Country> allCountries = new List<Country>();
-
-            SqlConnection sqlConnection = new SqlConnection(connectionString);
-
-            string query = "SELECT * FROM Countries ORDER BY 'Name' ASC";
-
-            SqlCommand sqlCommand = new SqlCommand(query,sqlConnection);
-
-            sqlConnection.Open();
-
-            SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
-
-            while (sqlDataReader.Read())
-            {
-                Country newCountry = new Country();
-                newCountry.CountryId = Convert.ToInt32(sqlDataReader["Id"].ToString());
-                newCountry.CountryName = sqlDataReader["Name"].ToString();
-                newCountry.CountryAbout =sqlDataReader["About"].ToString();
-                allCountries.Add(newCountry);
-            }
-            sqlConnection.Close();
-            return allCountries;
-        }
+        
 
         //public List<CountryViewModel> LoadAllCities()
         //{

@@ -13,22 +13,22 @@ namespace CountryCityManagementApp {
     public partial class CountryEntry {
         
         /// <summary>
-        /// form1 control.
+        /// CountryEntryForm control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.HtmlControls.HtmlForm CountryEntryForm;
         
         /// <summary>
-        /// nameLabelCountry control.
+        /// messageLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label nameLabelCountry;
+        protected global::System.Web.UI.WebControls.Label messageLabel;
         
         /// <summary>
         /// nameCountryTextBox control.
@@ -40,22 +40,13 @@ namespace CountryCityManagementApp {
         protected global::System.Web.UI.WebControls.TextBox nameCountryTextBox;
         
         /// <summary>
-        /// aboutLabel control.
+        /// aboutCountryTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label aboutLabel;
-        
-        /// <summary>
-        /// textAboutCountry control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea textAboutCountry;
+        protected global::System.Web.UI.WebControls.TextBox aboutCountryTextBox;
         
         /// <summary>
         /// saveCountryButton control.
@@ -74,15 +65,6 @@ namespace CountryCityManagementApp {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button cancelCountryButton;
-        
-        /// <summary>
-        /// messageLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label messageLabel;
         
         /// <summary>
         /// countryGridView control.

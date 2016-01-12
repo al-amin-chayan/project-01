@@ -12,9 +12,9 @@
     <title>CountryDropDown City Information Management System</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link href="css/main.css" rel="stylesheet" />
+    <link href="../css/main.css" rel="stylesheet" />
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -24,7 +24,7 @@
 </head>
 <body>
     <div class="container">
-        <!-- #include file ="Inc/nav.html" --> 
+        <!-- #include file ="../Inc/nav.html" --> 
         <!-- Jumbotron -->
         <div class="jumbotron">
             <h1>Project 01</h1>
@@ -39,9 +39,8 @@
                 <img src="img/nasrat_sharif.jpg" class="img-circle img-responsive img-thumbnail profile-pic" />
                 <p class="text-justify" style="margin-top: 15px;">If time is money, Mr. Aveek is running out of time. Sometimes he prefer to use his face for emoticons. <span class="text-danger">WARNING: he has an attitude and he knows how to use it!</span> His daily routine: Get up, be awesome, go back to bed.</p>
                 <p>
-                    <a class="btn btn-default" href="https://bd.linkedin.com/in/nsaveek" target="_blank" role="button">
-                        <i class="fa fa-linkedin-square"></i> View details &raquo;
-                    </a>
+                    <a class="btn btn-default" href="https://bd.linkedin.com/in/nsaveek" target="_blank" role="button"><i class="fa fa-linkedin-square"></i></a>
+                    <a class="btn btn-default" href="https://github.com/NsAveek" target="_blank" role="button"><i class="fa fa-github-square"></i></a>
                 </p>
             </div>
             <div class="col-lg-4">
@@ -49,9 +48,7 @@
                 <img src="img/alamin_ahmed.jpg" class="img-circle img-responsive img-thumbnail profile-pic"  />
                 <p class="text-justify" style="margin-top: 15px;">Mr Alamin is an energetic and enthusiastic person who enjoys a challenge and achieving personal goals. His present career aim is to work within IT because he enjoy working with computers, he enjoy the environment and find the work interesting and satisfying. The opportunity to learn new skills and work with new technologies is particularly attractive to him.</p>
                 <p>
-                    <a class="btn btn-default" href="https://bd.linkedin.com/in/nsaveek" target="_blank" role="button">
-                        <i class="fa fa-facebook-official"></i> View details &raquo;
-                    </a>
+                    <a class="btn btn-default" href="https://bd.linkedin.com/in/alamin-ahmed-2351a9112" target="_blank" role="button"><i class="fa fa-facebook-official"></i></a>
                 </p>
             </div>
             <div class="col-lg-4">
@@ -59,19 +56,18 @@
                 <img src="img/chayan.jpg" class="img-circle img-responsive img-thumbnail profile-pic" />
                 <p class="text-justify" style="margin-top: 15px;">Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
                 <p>
-                    <a class="btn btn-default" href="http://stackoverflow.com/users/3113693/chayan?tab=profile" target="_blank" role="button">
-                        <i class="fa fa-stack-overflow"></i> View details &raquo;
-                    </a>
+                    <a class="btn btn-default" href="http://stackoverflow.com/users/3113693/chayan?tab=profile" target="_blank" role="button"><i class="fa fa-stack-overflow"></i></a>
+                    <a class="btn btn-default" href="https://github.com/chayan01/" target="_blank" role="button"><i class="fa fa-github-square"></i></a>
+                    <a class="btn btn-default" href="https://bd.linkedin.com/in/chayan86" target="_blank" role="button"><i class="fa fa-linkedin-square"></i></a>
                 </p>
             </div>
         </div>
 
         <!-- Site footer -->
-        <!-- #include file ="Inc/footer.html" -->
-
+        <!-- #include file ="../Inc/footer.html" -->
     </div>
     <!-- /container -->
-    <script src="js/jquery-2.1.4.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="../js/jquery-2.1.4.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
 </body>
 </html>

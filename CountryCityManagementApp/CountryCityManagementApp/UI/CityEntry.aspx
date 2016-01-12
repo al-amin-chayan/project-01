@@ -11,18 +11,18 @@
     <title>City Entry</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/main.css" rel="stylesheet" />
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../css/main.css" rel="stylesheet" />
     <link href="//cdn.datatables.net/1.10.10/css/jquery.dataTables.min.css" rel="stylesheet" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="css/froala_editor.css" />
-    <link rel="stylesheet" href="css/froala_style.css" />
-    <link rel="stylesheet" href="css/plugins/code_view.css" />
-    <link rel="stylesheet" href="css/plugins/image_manager.css" />
-    <link rel="stylesheet" href="css/plugins/image.css" />
-    <link rel="stylesheet" href="css/plugins/table.css" />
-    <link rel="stylesheet" href="css/plugins/video.css" />
+    <link rel="stylesheet" href="../css/froala_editor.css" />
+    <link rel="stylesheet" href="../css/froala_style.css" />
+    <link rel="stylesheet" href="../css/plugins/code_view.css" />
+    <link rel="stylesheet" href="../css/plugins/image_manager.css" />
+    <link rel="stylesheet" href="../css/plugins/image.css" />
+    <link rel="stylesheet" href="../css/plugins/table.css" />
+    <link rel="stylesheet" href="../css/plugins/video.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/codemirror.min.css" />
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -40,13 +40,13 @@
         <!-- The justified navigation menu is meant for single line per list item.
            Multiple lines will require custom code not provided by Bootstrap. -->
         <div class="masthead">
-            <h3 class="text-muted">CountryDropDown City Information Management System</h3>
+            <h3 class="text-muted">Country City Information Management System</h3>
             <nav>
                 <ul class="nav nav-justified">
                     <li><a href="Index.aspx">Home</a></li>
                     <li><a href="CountryEntry.aspx">Country Entry</a></li>
                     <li class="active"><a href="CityEntry.aspx">City Entry</a></li>
-                    <li><a href="Index.aspx">View Cities</a></li>
+                    <li><a href="ViewCities.aspx">View Cities</a></li>
                     <li><a href="CountryView.aspx">View Countries</a></li>
                 </ul>
             </nav>
@@ -143,36 +143,48 @@
             </div>
         </form>
         <!-- Site footer -->
-        <!-- #include file ="Inc/footer.html" -->
+        <!-- #include file ="../Inc/footer.html" -->
 
     </div>
     <!-- /container -->
-    <script src="js/jquery-2.1.4.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="../js/jquery-2.1.4.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/codemirror.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/mode/xml/xml.min.js"></script>
-    <script type="text/javascript" src="js/froala_editor.min.js"></script>
-    <script type="text/javascript" src="js/plugins/align.min.js"></script>
-    <script type="text/javascript" src="js/plugins/code_beautifier.min.js"></script>
-    <script type="text/javascript" src="js/plugins/code_view.min.js"></script>
-    <script type="text/javascript" src="js/plugins/image.min.js"></script>
-    <script type="text/javascript" src="js/plugins/image_manager.min.js"></script>
-    <script type="text/javascript" src="js/plugins/link.min.js"></script>
-    <script type="text/javascript" src="js/plugins/lists.min.js"></script>
-    <script type="text/javascript" src="js/plugins/paragraph_format.min.js"></script>
-    <script type="text/javascript" src="js/plugins/paragraph_style.min.js"></script>
-    <script type="text/javascript" src="js/plugins/table.min.js"></script>
-    <script type="text/javascript" src="js/plugins/video.min.js"></script>
-    <script type="text/javascript" src="js/plugins/url.min.js"></script>
-    <script type="text/javascript" src="js/plugins/entities.min.js"></script>
-    <script src="js/jquery.validate.min.js"></script>
-    <script src="js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="../js/froala_editor.min.js"></script>
+    <script type="text/javascript" src="../js/plugins/align.min.js"></script>
+    <script type="text/javascript" src="../js/plugins/code_beautifier.min.js"></script>
+    <script type="text/javascript" src="../js/plugins/code_view.min.js"></script>
+    <script type="text/javascript" src="../js/plugins/image.min.js"></script>
+    <script type="text/javascript" src="../js/plugins/image_manager.min.js"></script>
+    <script type="text/javascript" src="../js/plugins/link.min.js"></script>
+    <script type="text/javascript" src="../js/plugins/lists.min.js"></script>
+    <script type="text/javascript" src="../js/plugins/paragraph_format.min.js"></script>
+    <script type="text/javascript" src="../js/plugins/paragraph_style.min.js"></script>
+    <script type="text/javascript" src="../js/plugins/table.min.js"></script>
+    <script type="text/javascript" src="../js/plugins/video.min.js"></script>
+    <script type="text/javascript" src="../js/plugins/url.min.js"></script>
+    <script type="text/javascript" src="../js/plugins/entities.min.js"></script>
+    <script src="../js/jquery.validate.min.js"></script>
+    <script src="../js/jquery.dataTables.min.js"></script>
     <script>
         $.validator.setDefaults({
-            submitHandler: function () {
-                alert("submitted!");
+            highlight: function (element) {
+                $(element).closest('.form-group').addClass('has-error');
+            },
+            unhighlight: function (element) {
+                $(element).closest('.form-group').removeClass('has-error');
+            },
+            errorElement: 'span',
+            errorClass: 'help-block',
+            errorPlacement: function (error, element) {
+                if (element.parent('.input-group').length) {
+                    error.insertAfter(element.parent());
+                } else {
+                    error.insertAfter(element);
+                }
             }
         });
 
@@ -182,15 +194,18 @@
             });
             $('#cityGridView').DataTable();
 
-            // validate the comment form when it is submitted
-            //$("#CityEntryForm").validate();
-
-            // validate signup form on keyup and submit
+            //Form Validation
             $("#CityEntryForm").validate({
                 rules: {
                     cityNameTextBox: "required",
                     aboutTextBox: "required",
                     dwellersTextBox: {
+                        required: true,
+                        min: 1
+                    },
+                    locationTextBox: "required",
+                    weatherTextBox: "required",
+                    countryDropDownList: {
                         required: true,
                         min: 1
                     }
@@ -201,29 +216,14 @@
                     dwellersTextBox: {
                         required: "Please enter number of dwellers",
                         min: "Minimum value is 1"
+                    },
+                    locationTextBox: "Please enter city location",
+                    weatherTextBox: "Please enter city weather information",
+                    countryDropDownList: {
+                        required: "Select Country of the City",
+                        min: "Select Country of the City"
                     }
                 }
-            });
-
-            // propose username by combining first- and lastname
-            $("#username").focus(function () {
-                var firstname = $("#firstname").val();
-                var lastname = $("#lastname").val();
-                if (firstname && lastname && !this.value) {
-                    this.value = firstname + "." + lastname;
-                }
-            });
-
-            //code to hide topic selection, disable for demo
-            var newsletter = $("#newsletter");
-            // newsletter topics are optional, hide at first
-            var inital = newsletter.is(":checked");
-            var topics = $("#newsletter_topics")[inital ? "removeClass" : "addClass"]("gray");
-            var topicInputs = topics.find("input").attr("disabled", !inital);
-            // show when newsletter is checked
-            newsletter.click(function () {
-                topics[this.checked ? "removeClass" : "addClass"]("gray");
-                topicInputs.attr("disabled", !this.checked);
             });
         });
     </script>

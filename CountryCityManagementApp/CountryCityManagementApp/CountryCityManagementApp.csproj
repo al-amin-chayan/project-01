@@ -57,6 +57,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\CountryCityManagementApp.dll.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -65,9 +66,11 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CityEntry.aspx" />
-    <Content Include="CountryEntry.aspx" />
-    <Content Include="CountryView.aspx" />
+    <Content Include="bin\CountryCityManagementApp.dll" />
+    <Content Include="bin\CountryCityManagementApp.pdb" />
+    <Content Include="UI\CityEntry.aspx" />
+    <Content Include="UI\CountryEntry.aspx" />
+    <Content Include="UI\CountryView.aspx" />
     <Content Include="css\bootstrap-theme.css" />
     <Content Include="css\bootstrap-theme.min.css" />
     <Content Include="css\bootstrap.css" />
@@ -115,7 +118,7 @@
     <Content Include="img\nasrat_sharif.jpg" />
     <Content Include="Inc\footer.html" />
     <Content Include="Inc\nav.html" />
-    <Content Include="Index.aspx" />
+    <Content Include="UI\Index.aspx" />
     <Content Include="js\froala_editor.min.js" />
     <Content Include="js\jquery.dataTables.min.js" />
     <Content Include="js\languages\ar.js" />
@@ -202,27 +205,27 @@
     <Compile Include="BusinessLogic\CityManager.cs" />
     <Compile Include="BusinessLogic\CountryManager.cs" />
     <Compile Include="BusinessLogic\CountryViewManager.cs" />
-    <Compile Include="BusinessLogic\Manager.cs" />
     <Compile Include="BusinessLogic\ViewCitiesManager.cs" />
-    <Compile Include="CityEntry.aspx.cs">
+    <Compile Include="Models\CountryListModel.cs" />
+    <Compile Include="UI\CityEntry.aspx.cs">
       <DependentUpon>CityEntry.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="CityEntry.aspx.designer.cs">
+    <Compile Include="UI\CityEntry.aspx.designer.cs">
       <DependentUpon>CityEntry.aspx</DependentUpon>
     </Compile>
-    <Compile Include="CountryEntry.aspx.cs">
+    <Compile Include="UI\CountryEntry.aspx.cs">
       <DependentUpon>CountryEntry.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="CountryEntry.aspx.designer.cs">
+    <Compile Include="UI\CountryEntry.aspx.designer.cs">
       <DependentUpon>CountryEntry.aspx</DependentUpon>
     </Compile>
-    <Compile Include="CountryView.aspx.cs">
+    <Compile Include="UI\CountryView.aspx.cs">
       <DependentUpon>CountryView.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="CountryView.aspx.designer.cs">
+    <Compile Include="UI\CountryView.aspx.designer.cs">
       <DependentUpon>CountryView.aspx</DependentUpon>
     </Compile>
     <Compile Include="DBGateway\CityGateway.cs">
@@ -235,11 +238,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Index.aspx.cs">
+    <Compile Include="UI\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Index.aspx.designer.cs">
+    <Compile Include="UI\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\CitiesViewModel.cs" />
@@ -250,6 +253,9 @@
     <Compile Include="Models\CountryViewModel.cs" />
     <Compile Include="Models\InputChecker.cs" />
     <Compile Include="Models\Message.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewCities.aspx.cs">
       <DependentUpon>ViewCities.aspx</DependentUpon>

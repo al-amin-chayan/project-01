@@ -13,7 +13,7 @@ namespace CountryCityManagementApp {
     public partial class WebForm1 {
         
         /// <summary>
-        /// form1 control.
+        /// CountryEntryForm control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
