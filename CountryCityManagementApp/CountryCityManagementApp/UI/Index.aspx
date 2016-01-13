@@ -9,7 +9,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="" />
 
-    <title>CountryDropDown City Information Management System</title>
+    <title>Country City Information Management System</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet" />
@@ -36,8 +36,8 @@
         <div class="row">
             <div class="col-lg-4">
                 <h2 class="text-center">Nasrat Sharif Aveek</h2>
-                <img src="img/nasrat_sharif.jpg" class="img-circle img-responsive img-thumbnail profile-pic" />
-                <p class="text-justify" style="margin-top: 15px;">If time is money, Mr. Aveek is running out of time. Sometimes he prefer to use his face for emoticons. <span class="text-danger">WARNING: he has an attitude and he knows how to use it!</span> His daily routine: Get up, be awesome, go back to bed.</p>
+                <img src="../img/nasrat_sharif.jpg" class="img-circle img-responsive img-thumbnail profile-pic" />
+                <p class="text-justify" style="margin-top: 15px;">If time is money, Mr. Aveek is running out of time. Sometimes he prefers to use his face for emoticons. <span class="text-danger">WARNING: he has an attitude and he knows how to use it!</span> His daily routine: Get up, be awesome, go back to bed.</p>
                 <p>
                     <a class="btn btn-default" href="https://bd.linkedin.com/in/nsaveek" target="_blank" role="button"><i class="fa fa-linkedin-square"></i></a>
                     <a class="btn btn-default" href="https://github.com/NsAveek" target="_blank" role="button"><i class="fa fa-github-square"></i></a>
@@ -45,16 +45,16 @@
             </div>
             <div class="col-lg-4">
                 <h2 class="text-center">Alamin Ahmed</h2>
-                <img src="img/alamin_ahmed.jpg" class="img-circle img-responsive img-thumbnail profile-pic"  />
-                <p class="text-justify" style="margin-top: 15px;">Mr Alamin is an energetic and enthusiastic person who enjoys a challenge and achieving personal goals. His present career aim is to work within IT because he enjoy working with computers, he enjoy the environment and find the work interesting and satisfying. The opportunity to learn new skills and work with new technologies is particularly attractive to him.</p>
+                <img src="../img/alamin_ahmed.jpg" class="img-circle img-responsive img-thumbnail profile-pic"  />
+                <p class="text-justify" style="margin-top: 15px;">Mr. Alamin is an energetic and enthusiastic person who enjoys a challenge and achieving personal goals. His present career aim is to work within IT because he enjoy working with computers, he enjoy the environment and find the work interesting and satisfying. The opportunity to learn new skills and work with new technologies is particularly attractive to him.</p>
                 <p>
                     <a class="btn btn-default" href="https://bd.linkedin.com/in/alamin-ahmed-2351a9112" target="_blank" role="button"><i class="fa fa-facebook-official"></i></a>
                 </p>
             </div>
             <div class="col-lg-4">
                 <h2 class="text-center">Al Amin Chayan</h2>
-                <img src="img/chayan.jpg" class="img-circle img-responsive img-thumbnail profile-pic" />
-                <p class="text-justify" style="margin-top: 15px;">Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
+                <img src="../img/chayan.jpg" class="img-circle img-responsive img-thumbnail profile-pic" />
+                <p class="text-justify" style="margin-top: 15px;">Mr. Chayan believes life is all about taking chances and meeting new people, experiencing new things, and having your perceptions altered. He prefers not to categorize people. He loves to laugh and make others laugh. He is a shallow, conceited, arrogant prick. He can also be the most sincere, thoughtful, gentleman you have ever meet.</p>
                 <p>
                     <a class="btn btn-default" href="http://stackoverflow.com/users/3113693/chayan?tab=profile" target="_blank" role="button"><i class="fa fa-stack-overflow"></i></a>
                     <a class="btn btn-default" href="https://github.com/chayan01/" target="_blank" role="button"><i class="fa fa-github-square"></i></a>
