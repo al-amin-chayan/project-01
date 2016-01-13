@@ -51,7 +51,7 @@
                 </ul>
             </nav>
         </div>
-        <form id="CountryEntryForm" runat="server">
+        <form id="CountryEntryForm" runat="server" class="form-horizontal">
             <div class="row" style="margin-top: 20px;">
                 <div class="col-xs-12">
                     <div class="panel panel-default">

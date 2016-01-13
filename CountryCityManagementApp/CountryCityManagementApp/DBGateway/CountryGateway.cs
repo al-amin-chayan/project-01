@@ -87,16 +87,17 @@ namespace CountryCityManagementApp.DBGateway
         {
 
             SqlConnection sqlConnection = new SqlConnection(connectionString);
-            string query = "INSERT INTO Countries  VALUES(@countryName, @countryAbout)";
+            string query = "INSERT INTO Countries (Name, About) VALUES (@countryName, @countryAbout)";
 
             sqlConnection.Open();
             SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
 
             sqlCommand.Parameters.Clear();
-            sqlCommand.Parameters.Add("countryName", SqlDbType.NVarChar);
+            sqlCommand.Parameters.Add("countryName", sqlDbType: SqlDbType.NVarChar);
             sqlCommand.Parameters["countryName"].Value = country.CountryName;
-            sqlCommand.Parameters.Add("countryAbout", SqlDbType.NVarChar);
+            sqlCommand.Parameters.Add("countryAbout", sqlDbType: SqlDbType.NVarChar);
             sqlCommand.Parameters["countryAbout"].Value = country.CountryAbout;
+            sqlCommand.ExecuteNonQuery();
             sqlConnection.Close();
         }
     }

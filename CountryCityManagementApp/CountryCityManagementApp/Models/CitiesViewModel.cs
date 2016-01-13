@@ -7,7 +7,7 @@ namespace CountryCityManagementApp
 {
     public class CitiesViewModel
     {
-        public int CityId { get; set; }
+        public int Sl { get; set; }
         public string CityName { get; set; }
         public string CityAbout { get; set; }
         public int NoOfDwellers { get; set; }

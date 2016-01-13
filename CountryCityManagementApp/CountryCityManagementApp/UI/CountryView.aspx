@@ -62,10 +62,9 @@
             </div>
             <div class="clearfix"></div>
             <div class="row">
-
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">CountryDropDown List</h3>
+                        <h3 class="panel-title">Country List</h3>
                     </div>
                     <div class="panel-body">
                         <asp:GridView ID="countryGridView" runat="server"
@@ -82,7 +81,6 @@
                         </asp:GridView>
                     </div>
                 </div>
-
             </div>
         </form>
         <!-- Site footer -->

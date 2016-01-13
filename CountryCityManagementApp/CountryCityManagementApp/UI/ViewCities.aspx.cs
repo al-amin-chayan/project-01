@@ -38,6 +38,8 @@ namespace CountryCityManagementApp
                 outputGridView.DataSource = manager.GetAllCiteies();
                 outputGridView.DataBind();
             }
+            outputGridView.UseAccessibleHeader = true;
+            outputGridView.HeaderRow.TableSection = TableRowSection.TableHeader;
         }
 
         protected void searchButton_Click(object sender, EventArgs e)

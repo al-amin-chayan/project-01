@@ -37,7 +37,7 @@ namespace CountryCityManagementApp.BusinessLogic
             if (newCountry.CountryAbout.Length == 0)
             {
                 message.Status = "alert alert-warning";
-                message.Details = "About field name is required.";
+                message.Details = "About field is required.";
                 return message;
             }
 

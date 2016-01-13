@@ -26,9 +26,11 @@ namespace CountryCityManagementApp
 
             List<CitiesViewModel> cities=new List<CitiesViewModel>();
 
+            int sl = 1;
             while (reader.Read())
             {
                 CitiesViewModel city=new CitiesViewModel();
+                city.Sl = sl++;
                 city.CityName = reader["CityName"].ToString();
                 city.CityAbout = reader["CityAbout"].ToString();
                 city.NoOfDwellers = Convert.ToInt32(reader["NoOfDwellers"].ToString());
@@ -59,9 +61,11 @@ namespace CountryCityManagementApp
 
             List<CitiesViewModel> cities = new List<CitiesViewModel>();
 
+            int sl = 1;
             while (reader.Read())
             {
                 CitiesViewModel city = new CitiesViewModel();
+                city.Sl = sl++;
                 city.CityName = reader["CityName"].ToString();
                 city.CityAbout = reader["CityAbout"].ToString();
                 city.NoOfDwellers = Convert.ToInt32(reader["NoOfDwellers"].ToString());
