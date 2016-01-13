@@ -71,9 +71,7 @@ namespace CountryCityManagementApp
             connection.Open();
 
             SqlCommand command = new SqlCommand(query, connection);
-
             SqlDataReader reader = command.ExecuteReader();
-
             List<Country> countries = new List<Country>();
 
             while (reader.Read())
