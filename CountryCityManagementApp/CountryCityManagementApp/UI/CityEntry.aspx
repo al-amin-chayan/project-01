@@ -201,6 +201,7 @@
                     aboutTextBox: "required",
                     dwellersTextBox: {
                         required: true,
+                        number: true,
                         min: 1
                     },
                     locationTextBox: "required",
@@ -214,7 +215,8 @@
                     cityNameTextBox: "Please enter city name",
                     aboutTextBox: "Please enter city information.",
                     dwellersTextBox: {
-                        required: "Please enter number of dwellers",
+                        required: "Please enter a valid number",
+                        number: "Please enter a valid number",
                         min: "Minimum value is 1"
                     },
                     locationTextBox: "Please enter city location",

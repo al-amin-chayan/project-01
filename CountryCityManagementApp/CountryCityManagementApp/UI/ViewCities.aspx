@@ -101,58 +101,6 @@
                     </div>
                 </div>
             </div>
-
-
-            <%--<div class="panel panel-default">
-                <div class="panel-heading">
-                    View Cities
-                </div>
-                <div class="panel-body">
-                    <div class="col-lg-12">
-                        <div class="table-responsive">
-                            <asp:GridView ID="outputGridView2" AutoGenerateColumns="False" AllowPaging="True" runat="server" Height="135px" PageSize="8" OnPageIndexChanging="outputGridView_PageIndexChanging" CssClass="table table-striped table-bordered table-hover" Style="margin-top: 5px" ItemStyle-CssClass="hidden-xs" HeaderStyle-CssClass="hidden-xs">
-                                <Columns>
-                                    <asp:TemplateField HeaderText="SL#">
-                                        <ItemTemplate>
-                                            <%# Container.DataItemIndex + 1 %>
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-
-                                    <asp:TemplateField HeaderText="City Name">
-                                        <ItemTemplate><%# Eval("CityName") %></ItemTemplate>
-                                    </asp:TemplateField>
-
-                                    <asp:TemplateField HeaderText="About">
-                                        <ItemTemplate><%# Eval("CityAbout") %></ItemTemplate>
-                                    </asp:TemplateField>
-
-                                    <asp:TemplateField HeaderText="No Of Dwellers">
-                                        <ItemTemplate><%# Eval("NoOfDwellers") %></ItemTemplate>
-                                    </asp:TemplateField>
-
-                                    <asp:TemplateField HeaderText="Location">
-                                        <ItemTemplate><%# Eval("Location") %></ItemTemplate>
-                                    </asp:TemplateField>
-
-                                    <asp:TemplateField HeaderText="Weather">
-                                        <ItemTemplate><%# Eval("Weather") %></ItemTemplate>
-                                    </asp:TemplateField>
-
-                                    <asp:TemplateField HeaderText="Country">
-                                        <ItemTemplate><%# Eval("CountryName") %></ItemTemplate>
-                                    </asp:TemplateField>
-
-                                    <asp:TemplateField HeaderText="About Country">
-                                        <ItemTemplate><%# Eval("CountryAbout") %></ItemTemplate>
-                                    </asp:TemplateField>
-                                </Columns>
-                                <PagerStyle CssClass="pagination-ys" />
-                            </asp:GridView>
-                        </div>
-                    </div>
-                </div>
-            </div>--%>
-
         </form>
         <!-- Site footer -->
         <!-- #include file ="../Inc/footer.html" -->

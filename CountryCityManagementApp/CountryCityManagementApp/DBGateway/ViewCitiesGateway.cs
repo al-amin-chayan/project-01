@@ -13,48 +13,29 @@ namespace CountryCityManagementApp
         string connectionString = WebConfigurationManager.ConnectionStrings["cityManagementconnectionString"].ConnectionString;
         public List<CitiesViewModel> GetAllCities()
         {
-
-            SqlConnection connection=new SqlConnection(connectionString);
-
             string query = @"SELECT a.Name AS CityName,a.About AS CityAbout,a.NoOfDwellers,a.Location,a.Weather,b.Name AS CountryName,b.About AS CountryAbout FROM Cities a LEFT OUTER JOIN Countries b ON a.CountryID=b.Id";
-
-            connection.Open();
-
-            SqlCommand command=new SqlCommand(query,connection);
-
-            SqlDataReader reader = command.ExecuteReader();
-
-            List<CitiesViewModel> cities=new List<CitiesViewModel>();
-
-            int sl = 1;
-            while (reader.Read())
-            {
-                CitiesViewModel city=new CitiesViewModel();
-                city.Sl = sl++;
-                city.CityName = reader["CityName"].ToString();
-                city.CityAbout = reader["CityAbout"].ToString();
-                city.NoOfDwellers = Convert.ToInt32(reader["NoOfDwellers"].ToString());
-                city.Location = reader["Location"].ToString();
-                city.Weather = reader["Weather"].ToString();
-                city.CountryName = reader["CountryName"].ToString();
-                city.CountryAbout = reader["CountryAbout"].ToString();
-
-                cities.Add(city);
-            }
-
-            return cities;
+            return GetCityList(query);
         }
 
 
         public List<CitiesViewModel> GetAllCitiesByCityName(string cityName)
         {
-
-            SqlConnection connection = new SqlConnection(connectionString);
-
             string query = @"SELECT a.Name AS CityName,a.About AS CityAbout,a.NoOfDwellers,a.Location,a.Weather,b.Name AS CountryName,b.About AS CountryAbout FROM Cities a LEFT OUTER JOIN Countries b ON a.CountryID=b.Id WHERE a.Name like '%'+'"+ cityName +"'+'%' ORDER BY a.Name ";
+            return GetCityList(query);
+        }
 
+
+        public List<CitiesViewModel> GetAllCitiesByCountryName(string countryId)
+        {
+            string query = @"SELECT a.Name AS CityName,a.About AS CityAbout,a.NoOfDwellers,a.Location,a.Weather,b.Name AS CountryName,b.About AS CountryAbout FROM Cities a LEFT OUTER JOIN Countries b ON a.CountryID=b.Id WHERE b.Id='" + countryId + "' ORDER BY a.Name ";
+            return GetCityList(query);
+        }
+
+        private List<CitiesViewModel> GetCityList(string query)
+        {
+            SqlConnection connection = new SqlConnection(connectionString);
+            
             connection.Open();
-
             SqlCommand command = new SqlCommand(query, connection);
 
             SqlDataReader reader = command.ExecuteReader();
@@ -79,40 +60,6 @@ namespace CountryCityManagementApp
 
             return cities;
         }
-
-
-        public List<CitiesViewModel> GetAllCitiesByCountryName(string countryId)
-        {
-
-            SqlConnection connection = new SqlConnection(connectionString);
-
-            string query = @"SELECT a.Name AS CityName,a.About AS CityAbout,a.NoOfDwellers,a.Location,a.Weather,b.Name AS CountryName,b.About AS CountryAbout FROM Cities a LEFT OUTER JOIN Countries b ON a.CountryID=b.Id WHERE b.Id='" + countryId + "' ORDER BY a.Name ";
-
-            connection.Open();
-
-            SqlCommand command = new SqlCommand(query, connection);
-
-            SqlDataReader reader = command.ExecuteReader();
-
-            List<CitiesViewModel> cities = new List<CitiesViewModel>();
-
-            while (reader.Read())
-            {
-                CitiesViewModel city = new CitiesViewModel();
-                city.CityName = reader["CityName"].ToString();
-                city.CityAbout = reader["CityAbout"].ToString();
-                city.NoOfDwellers = Convert.ToInt32(reader["NoOfDwellers"].ToString());
-                city.Location = reader["Location"].ToString();
-                city.Weather = reader["Weather"].ToString();
-                city.CountryName = reader["CountryName"].ToString();
-                city.CountryAbout = reader["CountryAbout"].ToString();
-
-                cities.Add(city);
-            }
-
-            return cities;
-        }
-
 
         public List<Country> GetAllCountries()
         {

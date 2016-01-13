@@ -110,7 +110,6 @@
     <Content Include="css\themes\red.min.css" />
     <Content Include="css\themes\royal.css" />
     <Content Include="css\themes\royal.min.css" />
-    <Content Include="css\ViewCities.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="img\alamin_ahmed.jpg" />
@@ -192,7 +191,6 @@
     <Content Include="js\jquery.validate.js" />
     <Content Include="js\jquery.validate.min.js" />
     <Content Include="UI\ViewCities.aspx" />
-    <Content Include="WebForm1.aspx" />
     <None Include="js\jquery-2.1.4.intellisense.js" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
@@ -262,13 +260,6 @@
     </Compile>
     <Compile Include="UI\ViewCities.aspx.designer.cs">
       <DependentUpon>ViewCities.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

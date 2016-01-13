@@ -59,12 +59,16 @@ namespace CountryCityManagementApp
                 outputGridView.DataSource = manager.GetAllCiteies();
                 outputGridView.DataBind();
             }
+            outputGridView.UseAccessibleHeader = true;
+            outputGridView.HeaderRow.TableSection = TableRowSection.TableHeader;
         }
 
         private void GetAllCities()
         {
             outputGridView.DataSource = manager.GetAllCiteies();
             outputGridView.DataBind();
+            outputGridView.UseAccessibleHeader = true;
+            outputGridView.HeaderRow.TableSection = TableRowSection.TableHeader;
         }
 
         private void GetAllCountries()
@@ -79,6 +83,8 @@ namespace CountryCityManagementApp
         {
             outputGridView.PageIndex = e.NewPageIndex;
             LoadGridData();
+            outputGridView.UseAccessibleHeader = true;
+            outputGridView.HeaderRow.TableSection = TableRowSection.TableHeader;
         }
     }
 }
