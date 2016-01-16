@@ -79,7 +79,8 @@
                                 <div class="form-group">
                                     <div class="col-sm-offset-2 col-sm-10">
                                         <asp:Button ID="saveCountryButton" runat="server" Text="Save" CssClass="btn btn-default" OnClick="saveCountryButton_Click" />
-                                        <asp:Button ID="cancelCountryButton" runat="server" Text="Cancel" CssClass="btn btn-default" OnClick="cancelCountryButton_Click" />
+                                        <a href="Index.aspx" role="button" class="btn btn-default">Cancel</a>
+                                        <%--<asp:Button ID="cancelCountryButton" runat="server" Text="Cancel" CssClass="btn btn-default" OnClick="cancelCountryButton_Click" />--%>
                                     </div>
                                 </div>
                             </div>
